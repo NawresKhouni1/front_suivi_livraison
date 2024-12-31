@@ -1,0 +1,79 @@
+<section class="formulaire" id="delivery">
+    <div class="container">
+        <div class="row">
+            <div class="section-title padd-15">
+                <h2>Details du livraison numéro {{delivery.trackNumber}}  </h2>
+            </div>
+        </div>
+  <div class="col-md-12">
+      <div class="card" *ngIf="delivery">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+             
+              <tr>
+                <th class="text-primary font-weight-bold">id :</th>
+                <td>{{ delivery.id }}</td>
+              </tr>
+              <tr>
+                  <th class="text-primary font-weight-bold">Numéro du véhicule :</th>
+                  <td>{{ delivery.trackNumber }}</td>
+                </tr>
+              <tr>
+                <th class="text-primary font-weight-bold">Etat :</th>
+                <td>{{ delivery.status }}</td>
+              </tr>
+              <tr>
+                <th class="text-primary font-weight-bold">Date de depart :</th>
+                <td>{{ delivery.departureDate }}</td>
+              </tr>
+              <tr>
+                <th class="text-primary font-weight-bold">Date d'arrivé :</th>
+                <td>{{ delivery.arrivalDate }}</td>
+              </tr>
+              <tr>
+                <th class="text-primary font-weight-bold">Date actuel :</th>
+                <td>{{ delivery.actualArrivalDate }}</td>
+              </tr>
+              <tr>
+                <th class="text-primary font-weight-bold">Addresse d'origine :</th>
+                <td>{{ delivery.originAddress }}</td>
+              </tr>
+              <tr>
+                <th class="text-primary font-weight-bold">Addresse de distination :</th>
+                <td>{{ delivery.destinationAddress }}</td>
+              </tr>
+              <tr>
+                <th class="text-primary font-weight-bold">Addresse local :</th>
+                <td>{{ delivery.currentLocation }}</td>
+              </tr>
+              <tr>
+                <th class="text-primary font-weight-bold">Poids :</th>
+                <td>{{ delivery.weight }}</td>
+              </tr>
+              <tr>
+                <th class="text-primary font-weight-bold">Prix :</th>
+                <td>{{ delivery.price }}</td>
+              </tr>
+              <!-- <tr>
+                <th class="text-primary font-weight-bold">Client :</th>
+                <td>{{ delivery.recipient }}</td>
+              </tr>
+              <tr>
+                <th class="text-primary font-weight-bold">Chaffeur :</th>
+                <td>{{ delivery.assignedDriver }}</td>
+              </tr> -->
+            
+             
+              
+          </table>
+        </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+    
+    
+    
+        

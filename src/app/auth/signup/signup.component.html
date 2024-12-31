@@ -1,0 +1,67 @@
+
+<section class="formulaire active" id="signup">
+    <div class="background-image"></div>
+    <div class="container">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-4 section-title padd-15">
+                            <h2>Sign Up</h2>
+                            <p style="color: lightslategray; text-align: center;">
+                                Please enter your signup details
+                            </p>
+                        </div>
+                        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                            <!-- Email -->
+                            <div class="form-item mb-3">
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" id="email" placeholder="Email" class="form-control" formControlName="email" name="email">
+                                </div>
+                            </div>
+                            <!-- Password -->
+                            <div class="form-item mb-3">
+                                <div class="form-group">
+                                    <label for="password">Password:</label>
+                                    <input type="password" id="password" placeholder="Password" class="form-control" formControlName="password" name="password"
+                                        [class.is-invalid]="signupForm.get('password')?.invalid && (signupForm.get('password')?.touched || signupForm.get('password')?.dirty)" />
+                                    <div class="invalid-feedback" *ngIf="signupForm.get('password')?.hasError('required')">
+                                        Password is required
+                                    </div>
+                                    <div class="invalid-feedback" *ngIf="signupForm.get('password')?.hasError('minlength')">
+                                        Password should have at least 6 characters
+                                    </div>
+                                    <div class="invalid-feedback" *ngIf="signupForm.get('password')?.hasError('maxlength')">
+                                        Password should have at most 40 characters
+                                    </div>
+                                    <div class="invalid-feedback" *ngIf="signupForm.get('password')?.hasError('pattern')">
+                                        Password must contain at least one lowercase letter, one uppercase letter, and one number
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Role -->
+                            <div class="form-item mb-3">
+                                <div class="form-group">
+                                    <label for="exampleInputRole">Role</label>
+                                    <select class="form-control" id="exampleInputRole" name="role" formControlName="role">
+                                        <option value="ROLE-USER">USER</option>
+                                        <option value="ROLE-ADMIN">ADMIN</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Buttons -->
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary w-50" [disabled]="isDisabled" name="SignUp">
+                                    <span *ngIf="!isDisabled">Sign Up</span>
+                                    <span *ngIf="isDisabled" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                    <span *ngIf="isDisabled">Loading...</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

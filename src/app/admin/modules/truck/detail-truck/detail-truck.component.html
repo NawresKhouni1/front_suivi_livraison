@@ -1,0 +1,47 @@
+<section class="formulaire" id="truck">
+    <div class="container">
+        <div class="row">
+            <div class="section-title padd-15">
+                <h2>Detail of {{truck.licensePlate}}  </h2>
+            </div>
+        </div>
+  <div class="col-md-12">
+      <div class="card" *ngIf="truck">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+             
+              <tr>
+                <th class="text-primary font-weight-bold">id :</th>
+                <td>{{ truck.id }}</td>
+              </tr>
+              <tr>
+                  <th class="text-primary font-weight-bold">Numéro du véhicule:</th>
+                  <td>{{ truck.truckNumber }}</td>
+                </tr>
+              <tr>
+                <th class="text-primary font-weight-bold">Type :</th>
+                <td>{{ truck.type }}</td>
+              </tr>
+              <tr>
+                <th class="text-primary font-weight-bold">Immatricule:</th>
+                <td>{{ truck.licensePlate }}</td>
+              </tr>
+              <tr>
+                <th class="text-primary font-weight-bold">Status :</th>
+                <td>{{ truck.status }}</td>
+              </tr>
+            
+             
+              
+          </table>
+        </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+    
+    
+    
+        

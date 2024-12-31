@@ -1,0 +1,47 @@
+<section class="formulaire" id="driver">
+    <div class="container">
+        <div class="row">
+            <div class="section-title padd-15">
+                <h2>Detail of {{driver.name}}  </h2>
+            </div>
+        </div>
+  <div class="col-md-12">
+      <div class="card" *ngIf="driver">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+             
+              <tr>
+                <th class="text-primary font-weight-bold">id :</th>
+                <td>{{ driver.id }}</td>
+              </tr>
+              <tr>
+                  <th class="text-primary font-weight-bold">Nom complet :</th>
+                  <td>{{ driver.name }}</td>
+                </tr>
+              <tr>
+                <th class="text-primary font-weight-bold">Numéro de license :</th>
+                <td>{{ driver.licenseNumber }}</td>
+              </tr>
+              <tr>
+                <th class="text-primary font-weight-bold">Numéro de contact :</th>
+                <td>{{ driver.phone }}</td>
+              </tr>
+              <tr>
+                <th class="text-primary font-weight-bold">Disponibilité :</th>
+                <td>{{ driver.availability }}</td>
+              </tr>
+            
+             
+              
+          </table>
+        </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+    
+    
+    
+        

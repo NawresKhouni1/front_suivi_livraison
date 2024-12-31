@@ -1,0 +1,107 @@
+<section class="formulaire active" id="driver">
+    <div class="col-12">
+        <div class="card">
+          <div class="section-title padd-15">
+          <h2 class="mb-0">Ajouter une commande</h2>
+        </div>
+
+        <div class="card-body p-5">
+        <form [formGroup]="validateForm" (ngSubmit)="add()">
+            <div class="form-group mb-4">
+              <label for="trackNumber" class="form-label">Numéro du commande</label>
+              <input id="trackNumber" formControlName="trackNumber" class="form-control" type="text" placeholder="Enter Track Number" />
+              <div *ngIf="validateForm.get('trackNumber')?.touched && validateForm.get('trackNumber')?.invalid" class="text-danger">
+                <div *ngIf="validateForm.get('trackNumber')?.errors?.['required']">Track Number is required</div>
+                <div *ngIf="validateForm.get('trackNumber')?.errors?.['minlength']">Track Number must be at least 4 characters</div>
+              </div>
+            </div>
+
+            <!-- Status Dropdown -->
+            <div>
+              <label for="status">Status</label>
+             <select id="status" formControlName="status">
+                <option *ngFor="let status of deliveryStatusList" [value]="status">{{ status }}</option>
+              </select>
+              <div *ngIf="validateForm.get('status')?.hasError('required')">
+                Status is required.
+              </div>
+            </div>
+  
+
+  
+    <div class="form-group">
+      <label for="departureDate">Date de depart </label>
+      <input id="departureDate" formControlName="departureDate" class="form-control" type="date" />
+      <div *ngIf="validateForm.get('departureDate')?.touched && validateForm.get('departureDate')?.invalid" class="text-danger">
+        <div *ngIf="validateForm.get('departureDate')?.errors?.['required']">Departure Date is required</div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="arrivalDate">Date d'arrivée </label>
+      <input id="arrivalDate" formControlName="arrivalDate" class="form-control" type="date" />
+      <div *ngIf="validateForm.get('arrivalDate')?.touched && validateForm.get('arrivalDate')?.invalid" class="text-danger">
+        <div *ngIf="validateForm.get('arrivalDate')?.errors?.['required']">Arrival Date is required</div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="actualArrivalDate">Date d'arrivée actuel</label>
+      <input id="actualArrivalDate" formControlName="actualArrivalDate" class="form-control" type="date" />
+      <div *ngIf="validateForm.get('actualArrivalDate')?.touched && validateForm.get('actualArrivalDate')?.invalid" class="text-danger">
+        <div *ngIf="validateForm.get('actualArrivalDate')?.errors?.['required']">Actual Arrival Date is required</div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="originAddress">Address d'origine </label>
+      <input id="originAddress" formControlName="originAddress" class="form-control" type="text" placeholder="Enter Origin Address" />
+      <div *ngIf="validateForm.get('originAddress')?.touched && validateForm.get('originAddress')?.invalid" class="text-danger">
+        <div *ngIf="validateForm.get('originAddress')?.errors?.['required']">Origin Address is required</div>
+        <div *ngIf="validateForm.get('originAddress')?.errors?.['minlength']">Origin Address must be at least 5 characters</div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="destinationAddress">Address de destination </label>
+      <input id="destinationAddress" formControlName="destinationAddress" class="form-control" type="text" placeholder="Enter Destination Address" />
+      <div *ngIf="validateForm.get('destinationAddress')?.touched && validateForm.get('destinationAddress')?.invalid" class="text-danger">
+        <div *ngIf="validateForm.get('destinationAddress')?.errors?.['required']">Destination Address is required</div>
+        <div *ngIf="validateForm.get('destinationAddress')?.errors?.['minlength']">Destination Address must be at least 5 characters</div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="currentLocation">Location actuelle </label>
+      <input id="currentLocation" formControlName="currentLocation" class="form-control" type="text" placeholder="Enter Current Location" />
+      <div *ngIf="validateForm.get('currentLocation')?.touched && validateForm.get('currentLocation')?.invalid" class="text-danger">
+        <div *ngIf="validateForm.get('currentLocation')?.errors?.['required']">Current Location is required</div>
+        <div *ngIf="validateForm.get('currentLocation')?.errors?.['minlength']">Current Location must be at least 5 characters</div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="weight">Poids</label>
+      <input id="weight" formControlName="weight" class="form-control" type="number" placeholder="Enter Weight" />
+      <div *ngIf="validateForm.get('weight')?.touched && validateForm.get('weight')?.invalid" class="text-danger">
+        <div *ngIf="validateForm.get('weight')?.errors?.['required']">Weight is required</div>
+        <div *ngIf="validateForm.get('weight')?.errors?.['min']">Weight must be greater than 0</div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="price">Prix</label>
+      <input id="price" formControlName="price" class="form-control" type="number" placeholder="Enter Price" />
+      <div *ngIf="validateForm.get('price')?.touched && validateForm.get('price')?.invalid" class="text-danger">
+        <div *ngIf="validateForm.get('price')?.errors?.['required']">Price is required</div>
+        <div *ngIf="validateForm.get('price')?.errors?.['min']">Price must be greater than or equal to 0</div>
+      </div>
+    </div>
+
+  
+    <button type="submit" [disabled]="isDisabled" class="btn btn-primary">Ajouter la commande</button>
+</form>
+          </div>
+        </div>
+    </div>
+</section>

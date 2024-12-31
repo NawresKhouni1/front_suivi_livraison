@@ -1,0 +1,79 @@
+<section class="formulaire active" id="driver">
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card shadow-lg border-0">
+          <!-- Titre -->
+          <div >
+            <h2 class="mb-0">Ajouter un Véhicule</h2>
+          </div>
+          <!-- Formulaire -->
+          <div class="card-body p-5">
+            <form [formGroup]="validateForm" (ngSubmit)="add()" class="vehicle-form">
+              <!-- Numéro de Véhicule -->
+              <div class="form-group mb-4">
+                <label for="truckNumber" class="form-label">Numéro de Véhicule</label>
+                <input
+                  id="truckNumber"
+                  formControlName="truckNumber"
+                  class="form-control"
+                  type="text"
+                  placeholder="Saisir le numéro de véhicule"
+                />
+                <div *ngIf="validateForm.get('truckNumber')?.touched && validateForm.get('truckNumber')?.invalid" class="text-danger mt-2">
+                  <small *ngIf="validateForm.get('truckNumber')?.errors?.['required']">Le numéro est obligatoire.</small>
+                  <small *ngIf="validateForm.get('truckNumber')?.errors?.['minlength']">Le numéro doit contenir au moins 4 caractères.</small>
+                </div>
+              </div>
+
+              <!-- Statut -->
+              <div class="form-group mb-4">
+                <label for="status" class="form-label">Statut</label>
+                <select id="status" formControlName="status" class="form-select">
+                  <option *ngFor="let status of truckStatusList" [value]="status">{{ status }}</option>
+                </select>
+                <div *ngIf="validateForm.get('status')?.hasError('required')" class="text-danger mt-2">
+                  <small>Le statut est obligatoire.</small>
+                </div>
+              </div>
+
+              <!-- Type de Véhicule -->
+              <div class="form-group mb-4">
+                <label for="type" class="form-label">Type de Véhicule</label>
+                <select id="type" formControlName="type" class="form-select">
+                  <option *ngFor="let type of truckTypeList" [value]="type">{{ type }}</option>
+                </select>
+                <div *ngIf="validateForm.get('type')?.hasError('required')" class="text-danger mt-2">
+                  <small>Le type de véhicule est obligatoire.</small>
+                </div>
+              </div>
+
+              <!-- Plaque d'Immatriculation -->
+              <div class="form-group mb-4">
+                <label for="licensePlate" class="form-label">Immatricule</label>
+                <input
+                  id="licensePlate"
+                  formControlName="licensePlate"
+                  class="form-control"
+                  type="text"
+                  placeholder="Saisir la plaque d'immatriculation"
+                />
+                <div *ngIf="validateForm.get('licensePlate')?.touched && validateForm.get('licensePlate')?.invalid" class="text-danger mt-2">
+                  <small *ngIf="validateForm.get('licensePlate')?.errors?.['required']">La plaque d'immatriculation est obligatoire.</small>
+                  <small *ngIf="validateForm.get('licensePlate')?.errors?.['minlength']">La plaque doit contenir au moins 5 caractères.</small>
+                </div>
+              </div>
+
+              <!-- Bouton Ajouter -->
+              <div class="text-center">
+                <button type="submit" [disabled]="isDisabled" pButton pRipple >
+                  Ajouter un Véhicule
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

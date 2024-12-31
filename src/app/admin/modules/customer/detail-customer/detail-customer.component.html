@@ -1,0 +1,47 @@
+<section class="formulaire" id="customer">
+    <div class="container">
+        <div class="row">
+            <div class="section-title padd-15">
+                <h2>Detail of {{customer.name}}  </h2>
+            </div>
+        </div>
+  <div class="col-md-12">
+      <div class="card" *ngIf="customer">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+             
+              <tr>
+                <th class="text-primary font-weight-bold">id :</th>
+                <td>{{ customer.id }}</td>
+              </tr>
+              <tr>
+                <th class="text-primary font-weight-bold">Name :</th>
+                <td>{{ customer.name }}</td>
+              </tr>
+              <tr>
+                  <th class="text-primary font-weight-bold">Adresse :</th>
+                  <td>{{ customer.address }}</td>
+                </tr>
+              <tr>
+                <th class="text-primary font-weight-bold">Numéro de contact :</th>
+                <td>{{ customer.phone }}</td>
+              </tr>
+              <tr>
+                <th class="text-primary font-weight-bold">Email :</th>
+                <td>{{ customer.email }}</td>
+              </tr>
+            
+             
+              
+          </table>
+        </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+    
+    
+    
+        

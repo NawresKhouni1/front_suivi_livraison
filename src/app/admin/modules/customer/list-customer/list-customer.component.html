@@ -1,0 +1,28 @@
+<p-table [value]="AllCustomers" [rowHover]="true">
+	<ng-template pTemplate="header">
+	  <tr>
+		<th>Id</th>
+		<th>Name</th>
+        <th>Address</th>
+		<th>Phone</th>
+        <th>Email</th>
+	  </tr>
+	</ng-template>
+	
+	<ng-template pTemplate="body" let-customer>
+	  <tr>
+        <td>{{ customer.id }}</td>
+		<td>{{ customer.name }}</td>
+        <td>{{ customer.address }}</td>
+		<td>{{ customer.phone }}</td>
+        <td>{{ customer.email }}</td>
+		<td class="text-center">
+			<div class="btn-group" role="group" style="display: inline-block;">
+			  <button class="btn " (click)="deleteCustomer(customer.id)">Delete</button>
+			  <button class="btn " [routerLink]="['../detail',customer.id]">Detail</button> 
+			  <!-- <button class="btn " [routerLink]="['../edit',member?.id]">Edit</button> -->
+			</div>
+		  </td>
+	  </tr>
+	</ng-template>
+  </p-table>

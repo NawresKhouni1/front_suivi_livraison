@@ -1,0 +1,118 @@
+// Form Styles
+$form-label-color: #333;
+$form-label-font-size: 1rem;
+$form-input-border-color: #ccc;
+$form-input-focus-border-color: #007bff;
+$form-input-border-radius: 5px;
+$form-input-padding: 1rem; // Increased padding
+$form-input-font-size: 1.2rem; // Increased font size
+$form-input-width: 100%; // Ensure the input takes full width
+$form-error-color: #dc3545;
+$form-button-bg: #007bff;
+$form-button-bg-hover: #0056b3;
+$form-button-text-color: #fff;
+$form-button-padding: 0.75rem 1.5rem;
+$form-group-margin-bottom: 20px;
+
+// Base form container
+#driver {
+  .card {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    .section-title {
+      margin-bottom: 20px;
+      h5 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #000000;
+      }
+    }
+
+    .p-fluid {
+      .form-group {
+        margin-bottom: $form-group-margin-bottom;
+
+        label {
+          display: block;
+          color: $form-label-color;
+          font-size: $form-label-font-size;
+          font-weight: bold;
+          margin-bottom: 8px;
+        }
+
+        .form-control {
+          width: $form-input-width; // Ensure input takes full width
+          padding: $form-input-padding;
+          font-size: $form-input-font-size;
+          border: 1px solid $form-input-border-color;
+          border-radius: $form-input-border-radius;
+          transition: border-color 0.3s ease;
+          
+          &:focus {
+            border-color: $form-input-focus-border-color;
+            outline: none;
+            box-shadow: 0 0 5px rgba($form-input-focus-border-color, 0.5);
+          }
+        }
+
+        .text-danger {
+          color: $form-error-color;
+          font-size: 0.875rem;
+          margin-top: 5px;
+        }
+      }
+
+      .form-group select {
+        width: $form-input-width;
+        padding: $form-input-padding;
+        font-size: $form-input-font-size;
+        border: 1px solid $form-input-border-color;
+        border-radius: $form-input-border-radius;
+        background-color: white;
+        
+        &:focus {
+          border-color: $form-input-focus-border-color;
+        }
+      }
+    }
+
+    .btn {
+      background-color: $form-button-bg;
+      color: $form-button-text-color;
+      padding: $form-button-padding;
+      border-radius: $form-input-border-radius;
+      font-size: 1rem;
+      font-weight: bold;
+      width: 100%;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: $form-button-bg-hover;
+      }
+
+      &:disabled {
+        background-color: lighten($form-button-bg, 20%);
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+// Responsive form adjustments
+@media (max-width: 768px) {
+  #driver .card {
+    margin-top: 10px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+  }
+}

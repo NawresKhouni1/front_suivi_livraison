@@ -1,0 +1,52 @@
+$form-label-color: #333; // Couleur des labels
+$form-label-font-size: 1.2rem; // Taille des labels
+$form-input-border-color: #ccc; // Couleur de la bordure des champs
+$form-input-focus-border-color: #0a53a1; // Couleur de la bordure lors du focus
+$form-input-border-radius: 5px; // Bordure arrondie des champs
+$form-error-color: #dc3545; // Couleur des messages d'erreur
+$form-button-bg: #0a53a1; // Couleur de fond du bouton
+$form-button-bg-hover: #0056b3; // Couleur du bouton au survol
+$form-button-text-color: #fff; // Couleur du texte du bouton
+
+.vehicle-form {
+  .form-label {
+    font-size: $form-label-font-size;
+    color: $form-label-color;
+    font-weight: bold;
+  }
+
+  .form-control,
+  .form-select {
+    border: 1px solid $form-input-border-color;
+    border-radius: $form-input-border-radius;
+    padding: 0.75rem;
+    font-size: 1rem;
+    &:focus {
+      border-color: $form-input-focus-border-color;
+      box-shadow: 0 0 5px rgba($form-input-focus-border-color, 0.5);
+    }
+  }
+
+  .text-danger {
+    font-size: 0.875rem;
+    color: $form-error-color;
+  }
+
+  button[type="submit"] {
+    background-color: $form-button-bg;
+    color: $form-button-text-color;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: $form-input-border-radius;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover {
+      background-color: $form-button-bg-hover;
+    }
+    &:disabled {
+      background-color: lighten($form-button-bg, 20%);
+      cursor: not-allowed;
+    }
+  }
+}

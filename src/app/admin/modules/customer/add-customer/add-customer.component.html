@@ -1,0 +1,54 @@
+<p>add-customer works!</p>
+<section class="formulaire active" id="driver">
+    <div class="col-12">
+        <div class="card">
+          <div class="section-title padd-15">
+          <h5>Ajouter un client</h5>
+          </div>
+          <div class="p-fluid p-formgrid grid">
+            <form [formGroup]="validateForm" (ngSubmit)="add()">
+    
+              <div class="field col-12 md:col-6">
+                <label for="name">Name</label>
+                <input pInputText id="name" type="text" formControlName="name" />
+              </div>
+    
+              <div class="field col-12 md:col-6">
+                <label for="address">Addresse</label>
+                <input pInputText id="address" type="text" formControlName="address" />
+              </div>
+    
+              <div class="field col-12 md:col-6">
+                <label for="phone">Numéro de contact</label>
+                <input pInputText id="phone" type="text" formControlName="phone" />
+              </div>
+
+              <div class="field col-12 md:col-6">
+                <label for="email">Email</label>
+                <input pInputText id="email" type="text" formControlName="email" />
+              </div>
+    
+              <div class="row">
+                <div class="form-item col-12 padd-15">
+                  <button type="submit" [disabled]="isDisabled" style=" font-size: 10px;
+                    font-weight: 500;
+                    padding: 12px 35px;
+                    color: white;
+                    border-radius: 40px;
+                    display: inline-block;
+                    white-space: nowrap;
+                    border: none;
+                    background: #709fdc;
+                    transition: all 0.3s ease;"  > 
+                    <span *ngIf="!isDisabled">Ajouter</span>
+                    <span *ngIf="isDisabled" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    <span *ngIf="isDisabled">Loading...</span>
+                  </button>
+                  <!-- <button pbutton="" label="Submit" class="p-element p-button p-component" ng-reflect-label="Submit"><span class="p-button-label">Submit</span></button> -->
+                </div>                   
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+  </section>
